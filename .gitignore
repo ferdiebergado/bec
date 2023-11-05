@@ -131,3 +131,5 @@ dist
 
 # libreoffice lock file
 .~lock.*
+# Local Netlify folder
+.netlify
