@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon src/server.ts",
     "build": "tsc",
-    "postbuild": "cp -r node_modules out/ && cp package-build.json out/package.json",
+    "postbuild": "cp -r node_modules out/ && cp package-build.json out/package.json && cp -r public out/ && cp -r storage out/",
     "start": "node out/server.js",
     "test": "jest",
     "clean": "rm -rf ./out"
