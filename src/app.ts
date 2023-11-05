@@ -10,7 +10,7 @@ import config from './config';
 const app = express();
 const router = Router();
 
-const storageDir = path.join(__dirname, '../storage');
+// const storageDir = path.join(__dirname, '../storage');
 const publicDir = path.join(__dirname, '../public');
 
 // const storage = multer.memoryStorage();
@@ -18,7 +18,7 @@ const publicDir = path.join(__dirname, '../public');
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
     // Specify the directory where uploaded files will be stored
-    cb(null, storageDir);
+    cb(null, config.paths.storage);
   },
   filename: (_req, file, cb) => {
     // Use the original filename as the stored filename

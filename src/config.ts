@@ -1,9 +1,12 @@
 import path from 'path';
 
+const rootDir = process.cwd();
+console.log(rootDir);
+
 const config = {
   paths: {
-    storage: path.join(__dirname, '../../storage'),
-    public: path.join(__dirname, '../../public'),
+    storage: path.join(rootDir, 'storage'),
+    public: path.join(rootDir, 'public'),
     emTemplate: 'em.xlsx',
     beTemplate: 'BLD-BE-001 Budget Estimate template.xlsx',
   },
