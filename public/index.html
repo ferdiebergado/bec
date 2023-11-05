@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Estimate to Expenditure Matrix Converter</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Budget Estimate to Expenditure Matrix Converter</h1>
+      <form action="/api/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="excelFile" accept=".xlsx" required />
+        <button type="submit">Convert</button>
+      </form>
+      <br /><br />
+      <small
+        >Click <a href="/api/download">here</a> to download the Budget Estimate
+        template.</small
+      >
+      <footer>&copy; 2023</footer>
+    </div>
+  </body>
+</html>
