@@ -29,15 +29,19 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-router.use(express.static(publicDir));
+const staticHandler = express.static(publicDir);
 
-router.get('/', (_req, res) => {
+app.use(staticHandler);
+
+// router.use(staticHandler);
+
+app.get('/', (_req, res) => {
   res.sendFile(path.join(publicDir, 'index.html'));
 });
 
-router.get('/download', (_req, res) => {
-  res.sendFile(path.join(storageDir, 'be.xlsx'));
-});
+// router.get('/download', (_req, res) => {
+//   res.sendFile(path.join(storageDir, config.paths.beTemplate));
+// });
 
 router.post('/upload', upload.single('excelFile'), async (req, res, next) => {
   try {
@@ -64,15 +68,26 @@ router.post('/upload', upload.single('excelFile'), async (req, res, next) => {
   }
 });
 
-// Custom error handler middleware
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-router.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+const errorHandler = (
+  err: any,
+  _req: Request,
+  res: Response,
+  _next: NextFunction,
+) => {
   console.error(err.stack);
   res.status(500).sendFile(path.join(publicDir, 'error.html'));
-});
+};
+
+// router.use(errorHandler);
+
+// Custom error handler middleware
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+app.use(errorHandler);
+
+app.use('/', router);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-export default router;
+export { app, staticHandler, errorHandler, router };
