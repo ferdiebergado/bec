@@ -7,7 +7,8 @@ const config = {
   paths: {
     storage: path.join(rootDir, 'storage'),
     public: path.join(rootDir, 'public'),
-    emTemplate: 'em.xlsx',
+    workDir: path.join(rootDir, 'storage', 'transactions'),
+    emTemplate: path.join(rootDir, 'storage', 'em.xlsx'),
     beTemplate: 'BLD-BE-001 Budget Estimate template.xlsx',
   },
   budgetEstimate: {

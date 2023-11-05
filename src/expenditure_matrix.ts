@@ -9,10 +9,12 @@ import {
   ExpenseItem,
   CellData,
 } from './types';
+import { timestamp } from './utils';
 
 class ExpenditureMatrix extends Worksheet {
   beMonth?: number;
 
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
   constructor(xls: string, sheet: string) {
     super(xls, sheet);
   }
@@ -213,9 +215,8 @@ class ExpenditureMatrix extends Worksheet {
   }
 
   async save() {
-    // const { name } = path.parse(this.xls);
-    const filename = `expenditure-${new Date().getTime()}.xlsx`;
-    const outputFile = path.join(this.storagePath, filename);
+    const filename = `expenditure-${timestamp()}.xlsx`;
+    const outputFile = path.join(this.workDir, filename);
 
     await this.wb.xlsx.writeFile(outputFile);
 

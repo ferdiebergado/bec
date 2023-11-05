@@ -1,9 +1,11 @@
-import BudgetEstimate from '../src/budget_estimate';
-import ExpenditureMatrix from '../src/expenditure_matrix';
-import { ExpenditureMatrixCell } from '../src/types';
+import path from 'path';
+import BudgetEstimate from '../budget_estimate';
+import ExpenditureMatrix from '../expenditure_matrix';
+import { ExpenditureMatrixCell } from '../types';
+import config from '../config';
 
-const xlsBe = 'storage/be.xlsx';
-const xlsEm = 'storage/em.xlsx';
+const xlsBe = path.join(config.paths.storage, 'be.xlsx');
+const xlsEm = config.paths.emTemplate;
 const beWs = 'BAE-BE-001';
 const emWs = 'Expenditure Form';
 const be = new BudgetEstimate(xlsBe, beWs);

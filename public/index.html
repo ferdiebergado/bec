@@ -14,16 +14,16 @@
   <body>
     <div class="container">
       <h1>Budget Estimate to Expenditure Matrix Converter</h1>
-      <p>
-        <strong>STEP 1</strong>
-      </p>
-      <p>
-        Click "Choose File" below to browse and select the duly accomplished
-        Budget Estimate file. The official Budget Estimate template can be
-        downloaded
-        <a href="./BLD-BE-001 Budget Estimate template.xlsx">here</a>.
-      </p>
-      <form action="/api/convert" method="post" enctype="multipart/form-data">
+      <form action="/convert" method="post" enctype="multipart/form-data">
+        <p>
+          <strong>STEP 1</strong>
+        </p>
+        <p>
+          Click "Choose File" below to browse and select the duly accomplished
+          Budget Estimate file. The official Budget Estimate template can be
+          downloaded
+          <a href="./BLD-BE-001 Budget Estimate template.xlsx">here</a>.
+        </p>
         <input type="file" name="excelFile" accept=".xlsx" required />
         <p>
           <strong>STEP 2</strong>

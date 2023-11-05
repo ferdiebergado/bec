@@ -1,7 +1,9 @@
-import BudgetEstimate from '../src/budget_estimate';
-import { ExpenseGroup, GAAObject, MannerOfRelease } from '../src/types';
+import path from 'path';
+import BudgetEstimate from '../budget_estimate';
+import config from '../config';
+import { ExpenseGroup, GAAObject, MannerOfRelease } from '../types';
 
-const xls = 'storage/be.xlsx';
+const xls = path.join(config.paths.storage, 'be.xlsx');
 const ws = 'BAE-BE-001';
 const be = new BudgetEstimate(xls, ws);
 

@@ -14,6 +14,7 @@ import {
 import { extractResult } from './utils';
 
 class BudgetEstimate extends Worksheet {
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
   constructor(xls: string, sheet: string) {
     super(xls, sheet);
   }

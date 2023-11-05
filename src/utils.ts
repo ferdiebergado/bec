@@ -21,4 +21,8 @@ const extractResult = (value: CellValue): number => {
   return 0;
 };
 
-export { isCellFormulaValue, extractResult };
+const timestamp = (): number => {
+  return new Date().getTime();
+};
+
+export { isCellFormulaValue, extractResult, timestamp };
