@@ -7,12 +7,12 @@ import { router, staticHandler } from '../../src/app';
 const app = express();
 // const { paths } = config;
 
-app.use(staticHandler);
+app.use(express.static('../../public'));
 app.use('/.netlify/functions/api', router);
 
 app.get('/', (_req, res) => {
   //   res.sendFile(path.join(paths.public, 'index.html'));
-  res.sendFile('/public/index.html');
+  res.sendFile('../../public/index.html');
 });
 // app.use(errorHandler);
 
