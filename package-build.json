@@ -2,13 +2,10 @@
   "name": "expenditure",
   "version": "1.0.0",
   "description": "Converts a Budget Estimate into an Expenditure Matrix",
-  "main": "out/server.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
-    "build": "tsc && cp package-build.json out/package.json",
-    "start": "node out/server.js",
-    "test": "jest",
-    "clean": "rm -rf ./out"
+    "start": "node server.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "Ferdinand Saporas Bergado <ferdiebergado@gmail.com>",
