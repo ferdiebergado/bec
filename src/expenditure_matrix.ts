@@ -213,8 +213,8 @@ class ExpenditureMatrix extends Worksheet {
   }
 
   async save() {
-    const { name } = path.parse(this.xls);
-    const filename = `${name}-processed-${new Date().getTime()}.xlsx`;
+    // const { name } = path.parse(this.xls);
+    const filename = `expenditure-${new Date().getTime()}.xlsx`;
     const outputFile = path.join(this.storagePath, filename);
 
     await this.wb.xlsx.writeFile(outputFile);

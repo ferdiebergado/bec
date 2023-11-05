@@ -23,6 +23,7 @@ class Worksheet {
 
   async load() {
     await this.wb.xlsx.readFile(path.join(this.storagePath, this.xls));
+
     this.ws = this.wb.getWorksheet(this.sheet);
   }
 }
