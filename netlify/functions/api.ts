@@ -4,6 +4,6 @@ import router from '../../src/server';
 
 const api = express();
 
-api.use('/', router);
+api.use('/.netlify/functions/', router);
 
 export const handler = serverless(api);
