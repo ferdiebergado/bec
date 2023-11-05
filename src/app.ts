@@ -42,7 +42,7 @@ app.get('/', (_req, res) => {
 //   res.sendFile(path.join(storageDir, config.paths.beTemplate));
 // });
 
-router.post('/upload', upload.single('excelFile'), async (req, res, next) => {
+router.post('/convert', upload.single('excelFile'), async (req, res, next) => {
   try {
     const beXls = req.file?.filename;
 
