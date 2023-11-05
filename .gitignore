@@ -133,3 +133,6 @@ dist
 .~lock.*
 # Local Netlify folder
 .netlify
+# uploaded and processed files
+storage/transactions
+
