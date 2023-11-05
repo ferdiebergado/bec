@@ -2,8 +2,8 @@ import path from 'path';
 
 const config = {
   paths: {
-    storage: path.join(__dirname, '../storage'),
-    public: path.join(__dirname, '../public'),
+    storage: path.join(__dirname, '../../storage'),
+    public: path.join(__dirname, '../../public'),
     emTemplate: 'em.xlsx',
     beTemplate: 'BLD-BE-001 Budget Estimate template.xlsx',
   },
